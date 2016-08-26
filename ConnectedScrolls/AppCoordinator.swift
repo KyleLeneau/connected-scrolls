@@ -32,14 +32,27 @@ final class AppCoordinator: Coordinator {
     }
     
     func seedData() {
+        clearEventData()
+        
         for x in 0...360 {
             let event = NSEntityDescription.insertNewObject(forEntityName: "Event", into: persistentContainer.viewContext) as! Event
             event.name = "Event \(x)"
             event.value = Float(x)
-            event.date = NSDate()
+            event.date = NSDate().addingTimeInterval(Double(x * 24 * 60 * 60))
         }
         
         saveContext()
+    }
+    
+    func clearEventData() {
+        let fetchRequest = NSFetchRequest<Event>(entityName: "Event");
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+        
+        do {
+            try persistentContainer.persistentStoreCoordinator.execute(deleteRequest, with: persistentContainer.viewContext)
+        } catch _ as NSError {
+            // TODO: handle the error
+        }
     }
     
     // MARK: - Core Data stack
