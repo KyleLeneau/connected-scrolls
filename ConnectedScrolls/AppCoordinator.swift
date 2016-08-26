@@ -27,6 +27,19 @@ final class AppCoordinator: Coordinator {
         self.navigationController = navVC
         
         window.rootViewController = navVC
+        
+        seedData()
+    }
+    
+    func seedData() {
+        for x in 0...360 {
+            let event = NSEntityDescription.insertNewObject(forEntityName: "Event", into: persistentContainer.viewContext) as! Event
+            event.name = "Event \(x)"
+            event.value = Float(x)
+            event.date = NSDate()
+        }
+        
+        saveContext()
     }
     
     // MARK: - Core Data stack
