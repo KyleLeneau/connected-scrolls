@@ -26,6 +26,10 @@ final class AppCoordinator: Coordinator {
         let navVC = storyboard.instantiateInitialViewController() as! UINavigationController
         self.navigationController = navVC
         
+        if let topVC = navVC.topViewController as? EventsViewController {
+            topVC.managedObjectContext = persistentContainer.viewContext
+        }
+        
         window.rootViewController = navVC
         
         seedData()

@@ -10,5 +10,5 @@ import UIKit
 
 class EventCollectionCell: UICollectionViewCell {
     
-    
+    @IBOutlet var label: UILabel!
 }
