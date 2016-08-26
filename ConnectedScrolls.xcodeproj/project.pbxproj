@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B311981D701DBF000591FB /* EventCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B311971D701DBF000591FB /* EventCollectionCell.swift */; };
+		27B3119A1D701DCE000591FB /* EventTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B311991D701DCE000591FB /* EventTableCell.swift */; };
 		27F5D62D1D6FD65A000759D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5D62C1D6FD65A000759D5 /* AppDelegate.swift */; };
 		27F5D62F1D6FD65A000759D5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F5D62E1D6FD65A000759D5 /* EventsViewController.swift */; };
 		27F5D6321D6FD65A000759D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F5D6301D6FD65A000759D5 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27B311971D701DBF000591FB /* EventCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionCell.swift; sourceTree = "<group>"; };
+		27B311991D701DCE000591FB /* EventTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableCell.swift; sourceTree = "<group>"; };
 		27F5D6291D6FD65A000759D5 /* ConnectedScrolls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectedScrolls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F5D62C1D6FD65A000759D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27F5D62E1D6FD65A000759D5 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				27F5D6381D6FD65A000759D5 /* LaunchScreen.storyboard */,
 				27F5D63B1D6FD65A000759D5 /* Info.plist */,
 				27F5D6331D6FD65A000759D5 /* ConnectedScrolls.xcdatamodeld */,
+				27B311971D701DBF000591FB /* EventCollectionCell.swift */,
+				27B311991D701DCE000591FB /* EventTableCell.swift */,
 			);
 			path = ConnectedScrolls;
 			sourceTree = "<group>";
@@ -278,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F5D65E1D700A30000759D5 /* AppCoordinator.swift in Sources */,
+				27B3119A1D701DCE000591FB /* EventTableCell.swift in Sources */,
 				27F5D62F1D6FD65A000759D5 /* EventsViewController.swift in Sources */,
+				27B311981D701DBF000591FB /* EventCollectionCell.swift in Sources */,
 				27F5D6601D700AEA000759D5 /* Coordinator.swift in Sources */,
 				27F5D6641D701390000759D5 /* Event+CoreDataProperties.swift in Sources */,
 				27F5D62D1D6FD65A000759D5 /* AppDelegate.swift in Sources */,

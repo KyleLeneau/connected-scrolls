@@ -33,13 +33,88 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YCt-wp-2TC">
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYK-uS-FGF">
+                                        <color key="backgroundColor" red="0.92710239396174032" green="1" blue="0.62933602275546829" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="G09-Ua-5Bm"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q7Y-5U-6Ku">
+                                            <size key="itemSize" width="50" height="86"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventCell" id="gtk-Vb-Ur5" customClass="EventCollectionCell" customModule="ConnectedScrolls" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="5" width="50" height="86"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="86"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="JGN-gO-vDs"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="vJ2-N2-yzB"/>
+                                        </connections>
+                                    </collectionView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n5x-Qq-rVp">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" textLabel="4fQ-ge-2Av" detailTextLabel="JUL-tH-QSh" style="IBUITableViewCellStyleSubtitle" id="Ayh-zi-awD" customClass="EventTableCell" customModule="ConnectedScrolls" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ayh-zi-awD" id="z3M-tX-KvK">
+                                                    <frame key="frameInset" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4fQ-ge-2Av">
+                                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JUL-tH-QSh">
+                                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="kgJ-dP-csb"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="0gu-4r-0RT"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YCt-wp-2TC" secondAttribute="bottom" id="Aef-cx-Sdc"/>
+                            <constraint firstItem="YCt-wp-2TC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="EZd-Pa-18l"/>
+                            <constraint firstAttribute="trailing" secondItem="YCt-wp-2TC" secondAttribute="trailing" id="auL-BB-srt"/>
+                            <constraint firstItem="YCt-wp-2TC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dJe-S9-mlJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Connected Scrolls" id="4N9-xz-Yg5"/>
+                    <connections>
+                        <outlet property="collectionView" destination="bYK-uS-FGF" id="Ami-MS-Bv3"/>
+                        <outlet property="tableView" destination="n5x-Qq-rVp" id="wSY-Z0-oTp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="-188"/>
+            <point key="canvasLocation" x="189.59999999999999" y="-188.45577211394306"/>
         </scene>
     </scenes>
 </document>
