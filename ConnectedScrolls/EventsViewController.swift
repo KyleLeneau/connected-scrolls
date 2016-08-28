@@ -54,8 +54,12 @@ class EventsViewController: UIViewController {
     }
 }
 
-extension EventsViewController: UICollectionViewDelegate {
+extension EventsViewController: UICollectionViewDelegate, UITableViewDelegate {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        print(offset)
+    }
 }
 
 extension EventsViewController: UICollectionViewDataSource {
@@ -80,10 +84,6 @@ extension EventsViewController: UICollectionViewDataSource {
     }
 }
 
-extension EventsViewController: UITableViewDelegate {
-    
-}
-
 extension EventsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -105,6 +105,5 @@ extension EventsViewController: UITableViewDataSource {
 }
 
 extension EventsViewController: NSFetchedResultsControllerDelegate {
-    
-    
+
 }
