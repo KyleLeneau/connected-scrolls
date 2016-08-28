@@ -17,7 +17,7 @@ class EventsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     lazy var fetchedResultsController: NSFetchedResultsController<Event> = {
-        let eventRequest = Event.fetchRequest() as NSFetchRequest<Event>
+        let eventRequest: NSFetchRequest<Event> = Event.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         eventRequest.sortDescriptors = [sortDescriptor]
         
@@ -42,6 +42,12 @@ class EventsViewController: UIViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let indexPath = IndexPath(item: 360, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,7 +73,8 @@ extension EventsViewController: UICollectionViewDataSource {
         let event = fetchedResultsController.object(at: indexPath)
         
         cell.contentView.backgroundColor = UIColor.red
-        cell.label.text = "\(event.value)"
+        cell.label.text = event.name
+        cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI / -2));
         
         return cell
     }
